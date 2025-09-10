@@ -1,0 +1,151 @@
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html,body { height: 100%; margin: 0; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background: #f4f6f8; color: #1f2937; }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 32px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 960px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 24px rgba(16,24,40,0.08);
+      padding: 28px;
+      overflow: hidden;
+    }
+
+    header.card-header {
+      margin-bottom: 20px;
+    }
+    header.card-header h1 {
+      margin: 0 0 6px 0;
+      font-size: 1.25rem;
+      letter-spacing: -0.2px;
+    }
+    header.card-header p {
+      margin: 0;
+      color: #475569;
+      font-size: 0.95rem;
+    }
+
+    form {
+      display: grid;
+      gap: 18px;
+    }
+
+ 
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    @media (min-width: 760px) {
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+
+   
+    fieldset {
+      border: 1px solid #e6e9ee;
+      padding: 14px 16px;
+      border-radius: 10px;
+      background: #fcfdff;
+    }
+    legend {
+      padding: 0 8px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+ 
+    .form-row {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    label {
+      font-size: 0.9rem;
+      color: #334155;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select,
+    textarea {
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 0.95rem;
+      outline: none;
+      background: #ffffff;
+      transition: box-shadow .12s, border-color .12s;
+    }
+    textarea { min-height: 90px; resize: vertical; }
+    input:focus, select:focus, textarea:focus {
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 4px rgba(124,58,237,0.06);
+    }
+    input:invalid, textarea:invalid {
+      border-color: #ef4444;
+      box-shadow: none;
+    }
+    .hint {
+      font-size: 0.83rem;
+      color: #64748b;
+    }
+
+    /* Row for smaller grouped fields (city/state/zip) */
+    .row {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 520px) {
+      .row.col-3 {
+        grid-template-columns: 1fr 120px 100px;
+        align-items: end;
+      }
+      .row.col-2 {
+        grid-template-columns: 1fr 140px;
+        align-items: end;
+      }
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 6px;
+    }
+    button {
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: none;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+    button.primary {
+      background: linear-gradient(90deg,#5b21b6,#7c3aed);
+      color: #fff;
+      box-shadow: 0 6px 18px rgba(124,58,237,0.18);
+    }
+    button.ghost {
+      background: transparent;
+      border: 1px solid #e6e9ee;
+      color: #0f172a;
+    }
+
+    .required-note { font-size: 0.85rem; color: #475569; margin-top: 4px; }
+
+
+    footer.form-footer {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #64748b;
+    }

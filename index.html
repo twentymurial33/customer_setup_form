@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Customer Setup Form</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page">
+    <div class="card" role="region" aria-labelledby="form-heading">
+      <header class="card-header">
+        <h1 id="form-heading">Customer Setup</h1>
+        <p>Enter the customer's details and billing/shipping information. Fields marked with * are required.</p>
+      </header>
+
+      <form novalidate>
+    
+        <fieldset>
+          <legend>Company & Contact</legend>
+          <div class="grid-2">
+            <div class="form-row">
+              <label for="company">Company name *</label>
+              <input id="company" name="company" type="text" required minlength="2" placeholder="ACME Corp" />
+            </div>
+
+            <div class="form-row">
+              <label for="contact">Primary contact *</label>
+              <input id="contact" name="contact" type="text" required placeholder="Jane Doe" />
+            </div>
+
+            <div class="form-row">
+              <label for="email">Email *</label>
+              <input id="email" name="email" type="email" required placeholder="jane@example.com" />
+              <div class="hint">We will send order notifications to this address.</div>
+            </div>
+
+            <div class="form-row">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" pattern="[\d\s()+-]{7,}" placeholder="(555) 555-5555" />
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Billing Address</legend>
+          <div class="form-row">
+            <label for="bill-street">Street address *</label>
+            <input id="bill-street" name="bill-street" type="text" required placeholder="123 Main St" />
+          </div>
+
+          <div class="row col-3">
+            <div class="form-row">
+              <label for="bill-city">City *</label>
+              <input id="bill-city" name="bill-city" type="text" required placeholder="Springfield" />
+            </div>
+
+            <div class="form-row">
+              <label for="bill-state">State *</label>
+              <select id="bill-state" name="bill-state" required>
+                <option value="">Select</option>
+                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                <option>CA</option><option>CO</option><option>CT</option> <!-- add full list as needed -->
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="bill-zip">ZIP *</label>
+              <input id="bill-zip" name="bill-zip" type="text" pattern="\d{5}(-\d{4})?" required placeholder="12345" />
+            </div>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Shipping Address</legend>
+          <div class="form-row">
+            <label for="ship-street">Street address</label>
+            <input id="ship-street" name="ship-street" type="text" placeholder="If different from billing" />
+          </div>
+
+          <div class="row col-3">
+            <div class="form-row">
+              <label for="ship-city">City</label>
+              <input id="ship-city" name="ship-city" type="text" />
+            </div>
+
+            <div class="form-row">
+              <label for="ship-state">State</label>
+              <select id="ship-state" name="ship-state">
+                <option value="">Select</option>
+                <option>AL</option><option>AK</option><option>AZ</option><option>AR</option>
+                <option>CA</option><option>CO</option><option>CT</option>
+              </select>
+            </div>
+
+            <div class="form-row">
+              <label for="ship-zip">ZIP</label>
+              <input id="ship-zip" name="ship-zip" type="text" pattern="\d{5}(-\d{4})?" placeholder="12345" />
+            </div>
+          </div>
+
+          <div class="required-note">Tip: If shipping is the same as billing, copy the billing info into shipping fields before submitting.</div>
+        </fieldset>
+        <fieldset>
+          <legend>Credit & Billing Terms</legend>
+          <div class="grid-2">
+            <div class="form-row">
+              <label for="payment-terms">Payment terms *</label>
+              <select id="payment-terms" name="payment-terms" required>
+                <option value="">Select terms</option>
+                <option>Net 30</option>
+                <option>Net 45</option>
+                <option>Net 60</option>
+                <option>Prepaid</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="credit-limit">Credit limit (USD)</label>
+              <input id="credit-limit" name="credit-limit" type="number" min="0" step="1" placeholder="0" />
+            </div>
+          </div>
+          <div class="form-row">
+            <label for="notes">Internal notes</label>
+            <textarea id="notes" name="notes" placeholder="Any internal notes, restrictions, or shipping preferences..."></textarea>
+          </div>
+        </fieldset>
+        <div class="actions" aria-hidden="false">
+          <button type="button" class="ghost" onclick="this.form.reset();">Reset</button>
+          <button type="submit" class="primary">Save customer</button>
+        </div>
+        <footer class="form-footer">By saving you agree that the information is accurate and may be used for order processing.</footer>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
