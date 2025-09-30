@@ -4,22 +4,34 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Customer Setup Form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <form>
     <header>
       <h1>Customer Setup Form</h1>
     </header>
-    <section>
+    <section id="country">
+      <label>
+        <h2>Country</h2>
+        <select name="country">
+          <option value = "United States">United States</option>
+          <option value = "United States">United States</option>
+          <option value = "United States">United States</option>
+        </select>
+      </label>
+    <section id="contact-info">
        <label>
+        <h2>Contact Info</h2>
          <input type="text" name="first_name" placeholder="First Name">
          <input type="text" name="last_name" placeholder="Last Name">
        </label>
     </section>
     <section>
-
+      <h2>Business Info</h2>
     </section>
 
   </form>
+  <script src="main.js"></script>
 </body>
 </html>
