@@ -13,3 +13,7 @@ This project includes
 
 
 ### Tech Used 
+
+- HTML 
+- CSS
+- JavaScript
