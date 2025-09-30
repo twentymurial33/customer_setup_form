@@ -27,6 +27,10 @@
       margin: 0 0 6px 0;
       font-size: 1.25rem;
       letter-spacing: -0.2px;
+      text-align: center;
+    }
+    header h1{
+      text-align: center;
     }
     header.card-header p {
       margin: 0;
