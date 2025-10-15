@@ -3,12 +3,12 @@
 
 ## Overview
 
-This is a customer setup form built with HTML and CSS
+This is a basic customer setup form built with HTML, CSS and JavaScript. 
 
 
 ### Features
 -------------------------------------------------
-This project includes 
+This project has begun to test the theory of using only using native form elements end to end to build a robust form.
 
 
 
@@ -17,3 +17,4 @@ This project includes
 - HTML 
 - CSS
 - JavaScript
+- Recaptcha
