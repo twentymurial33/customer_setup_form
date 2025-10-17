@@ -1,9 +1,14 @@
-<li class="items"></li>
+document.addEventListener('DOMContentLoaded', () => {
+  const headers = document.querySelectorAll('.accordion-header');
 
-function addItem(event) {
-  event.preventDefault();
-  const item = document.createElement("li");
-  item.classList.add("items");
-  item.innerHTML = `<h2>${event.target.first_name.value}</h2>`;
-  document.querySelector(".items").appendChild(item);
-}
+  headers.forEach(header => {
+    header.addEventListener('click', () => {
+      const item = header.parentElement;
+      const currentlyActive = document.querySelector('.accordion-item.active');
+      if (currentlyActive && currentlyActive !== item) {
+        currentlyActive.classList.remove('active');
+      }
+      item.classList.toggle('active');
+    });
+  });
+});
