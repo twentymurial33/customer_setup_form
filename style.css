@@ -153,3 +153,29 @@
       font-size: 0.85rem;
       color: #64748b;
     }
+    .section-header {
+      font-family: Arial, sans-serif;
+      font-size: 2em; 
+      color: #333;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid #ccc; 
+    }
+
+    .section-header.fancy {
+      background-color: #f0f0f0;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    section:nth-of-type(odd) .section-header {
+      color: #007bff; 
+    }
+    
+    section:nth-of-type(even) .section-header {
+      color: #28a745; 
+    }
