@@ -12,3 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+console.log(item);
+document.getElementById('submission-button').addEventListener('click',(
+  e=>{
+    e.preventDefault();
+    console.log('clicked');
+  }
+))
