@@ -14,9 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstName = document.getElementById("firstName");
     const lastName = document.getElementById("lastName");
     const email = document.getElementById("email");
-    const businessFirstName =document.getElementById("businessFirstName");
-    const businessLastName =document.getElementById("businessLastName");
-
+    const businessName =document.getElementById("businessName");
     const businessEmail =document.getElementById("businessEmail");
     function showError(input, message) {
         clearError(input);
@@ -50,31 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function validateEmail(input) {
         const emailValue = input.value.trim();
-
-        // Basic email validation
         const emailPattern =
             /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
         if (!emailValue) {
             showError(input, "Email is required.");
             return false;
         }
-
         if (!emailPattern.test(emailValue)) {
             showError(input, "Please enter a valid email address.");
             return false;
         }
-
         clearError(input);
-
         return true;
     }
 
     const requiredFields = [
         firstName,
         lastName,
-        businessFirstName,
-        businessLastName
+        businessName
     ];
 
     requiredFields.forEach((input) => {
@@ -128,15 +119,15 @@ document.addEventListener("DOMContentLoaded", () => {
             isValid = false;
         }
         if (!validateRequired(
-            businessFirstName,
-            "Business First Name"
+            businessName,
+            "Business Name"
         )) {
             isValid = false;
         }
 
         if (!validateRequired(
-            businessLastName,
-            "Business Last Name"
+            businessName,
+            "Business Name"
         )) {
             isValid = false;
         }
@@ -147,8 +138,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!isValid) {
             console.log("Form validation failed.");
-
-            // Scroll to the first error
             const firstError =
                 document.querySelector(".input-error");
 
@@ -173,8 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
             },
 
             business: {
-                firstName: businessFirstName.value.trim(),
-                lastName: businessLastName.value.trim(),
+                name: businessName.value.trim(),
                 email: businessEmail.value.trim()
             }
         };
@@ -182,24 +170,6 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Customer data:", customerData);
 
         alert("Customer setup completed successfully!");
-
-      
-        // {
-        //     country: "United States",
-
-        //     contact: {
-        //         firstName: "John",
-        //         lastName: "Smith",
-        //         email: "john@example.com"
-        //     },
-
-        //     business: {
-        //         firstName: "Jane",
-        //         lastName: "Smith",
-        //         email: "jane@company.com"
-        //     }
-        // }
-      
 
         submitButton.disabled = true;
         submitButton.textContent = "Submitted";
